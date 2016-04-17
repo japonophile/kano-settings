@@ -1,7 +1,6 @@
 #!/usr/bin/make -f
 
 %:
-	cd po && make
 	dh $@ --with python2
 
 override_dh_auto_build:

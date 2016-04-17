@@ -30,8 +30,8 @@ class ConnectToNetwork():
         self._connect_to_network()
 
     def _connect_to_network(self):
-        title = _("Connecting to {}").format(self._network_name)
-        description = _("Any minute now")
+        title = "Connecting to {}".format(self._network_name)
+        description = "Any minute now"
         SpinnerScreen(self._win, title, description,
                       self._launch_connect_thread)
 
@@ -57,21 +57,21 @@ class ConnectToNetwork():
 
     def _fail_screen(self, win):
         win.remove_main_widget()
-        title = _("Cannot connect!")
-        description = _("Maybe the signal was too weak to connect.")
+        title = "Cannot connect!"
+        description = "Maybe the signal was too weak to connect."
         buttons = [
             {
                 "label": ""
             },
             {
-                "label": _("TRY AGAIN"),
+                "label": "TRY AGAIN",
                 "type": "KanoButton",
                 "color": "green",
                 # Go to the network refresh screen
                 "callback": self._go_to_network_screen
             },
             {
-                "label": _("QUIT"),
+                "label": "QUIT",
                 "type": "OrangeButton",
                 "callback": Gtk.main_quit
             }
@@ -90,11 +90,11 @@ class ConnectToNetwork():
 
     def _success_screen(self):
         self._win.remove_main_widget()
-        title = _("Success")
-        description = _("You're connected")
+        title = "Success"
+        description = "You're connected"
         buttons = [
             {
-                "label": _("OK"),
+                "label": "OK",
                 "type": "KanoButton",
                 "color": "green",
                 "callback": Gtk.main_quit
@@ -113,7 +113,7 @@ class ConnectToNetwork():
         )
 
     def _launch_connect_thread(self):
-        logger.debug(_('Connecting to {}').format(self._network_name))
+        logger.debug('Connecting to {}'.format(self._network_name))
 
         # start thread
         t = threading.Thread(
@@ -155,7 +155,7 @@ def _connect_thread_(wiface, network_name, passphrase, encryption,
         wificache.empty()
 
     logger.debug(
-        _('Connecting to {} {} {}. Successful: {}').format(
+        'Connecting to {} {} {}. Successful: {}'.format(
             network_name, encryption, passphrase, success
         )
     )

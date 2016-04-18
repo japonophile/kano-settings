@@ -25,4 +25,6 @@ etc_override /usr/share/kano-settings
 
 overscan/overscan /usr/bin
 
+locale/* /usr/share/locale
+
 WHITELIST /usr/share/kano-settings/config/
